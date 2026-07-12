@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --deep-purple: #4B166E;
+  --bright-yellow: #FFF200;
+  --gold: #D99A00;
+  --dark-text: #1F2937;
+  --light-background: #F8F9FC;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--dark-text);
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(255, 242, 0, 0.85);
+  outline-offset: 3px;
+}
+
+.section-pad {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding: 3.75rem 0;
+  }
+}
+
+.container-pad {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.card {
+  border: 1px solid rgba(75, 22, 110, 0.12);
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(31, 41, 55, 0.07);
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(31, 18, 45, 0.88) 0%, rgba(43, 20, 58, 0.66) 44%, rgba(31, 18, 45, 0.20) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.36));
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.image-fallback {
+  background:
+    linear-gradient(135deg, rgba(75, 22, 110, 0.94), rgba(217, 154, 0, 0.72)),
+    radial-gradient(circle at 20% 10%, rgba(255, 242, 0, 0.34), transparent 28%);
+}
