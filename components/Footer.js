@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Globe, Phone, School, Send, Share2 } from "lucide-react";
+import Image from "next/image";
+import { Globe, Phone, Send, Share2 } from "lucide-react";
 import { navLinks, school } from "@/lib/schoolData";
 
 export default function Footer() {
@@ -10,8 +11,14 @@ export default function Footer() {
       <div className="container-pad grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-md bg-white text-purple-brand">
-              <School size={27} aria-hidden="true" />
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white">
+              <Image
+                src={school.logoSrc}
+                alt={`${school.name} logo`}
+                width={56}
+                height={56}
+                className="h-full w-full object-contain p-1"
+              />
             </span>
             <div>
               <p className="font-black">{school.name}</p>
