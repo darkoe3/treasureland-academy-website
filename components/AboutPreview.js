@@ -1,6 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "./SectionHeading";
-import { school } from "@/lib/schoolData";
+import { academicLevelLabel, school } from "@/lib/schoolData";
 
 export default function AboutPreview() {
   return (
@@ -10,7 +10,7 @@ export default function AboutPreview() {
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-yellow-brand">Founded {school.founded}</p>
           <h2 className="mt-4 text-3xl font-black">A warm, ambitious school community in Kasoa-Brigade.</h2>
           <p className="mt-5 leading-8 text-white/82">
-            Nursery, Kindergarten, Primary and Junior High learners grow in a safe, supportive environment where
+            {academicLevelLabel} learners grow in a safe, supportive environment where
             curiosity, discipline, creativity and service are part of everyday school life.
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function AboutPreview() {
               and environmental responsibility.
             </p>
             <p>
-              We provide education at the Nursery, Kindergarten, Primary and Junior High School levels, preparing every
+              We provide education at the {academicLevelLabel} levels, preparing every
               learner with the knowledge, skills, values and confidence required to thrive in a changing global society.
             </p>
           </div>

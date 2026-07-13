@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { academicLevelNames } from "@/lib/schoolData";
 
 export default function AdmissionForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -35,10 +36,9 @@ export default function AdmissionForm() {
           Class applying for
           <select required name="class" className="rounded-md border border-slate-200 px-4 py-3">
             <option value="">Select class</option>
-            <option>Nursery</option>
-            <option>Kindergarten</option>
-            <option>Primary</option>
-            <option>Junior High School</option>
+            {academicLevelNames.map((level) => (
+              <option key={level}>{level}</option>
+            ))}
           </select>
         </label>
         <label className="grid gap-2 text-sm font-bold text-slate-700">

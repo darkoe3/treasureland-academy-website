@@ -3,14 +3,14 @@ import { academicLevels } from "@/lib/schoolData";
 
 export default function AcademicLevels({ detailed = false }) {
   return (
-    <section className="section-pad bg-mist">
+    <section id="academic-levels" className="section-pad scroll-mt-24 bg-mist">
       <div className="container-pad">
         <SectionHeading
           eyebrow="Academic Pathways"
           title="Learning stages designed for steady growth"
-          text="From early years through Junior High School, every level supports strong academics, independence, confidence and character."
+          text="From Creche through Junior High School, every level supports strong academics, independence, confidence and character."
         />
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {academicLevels.map(({ title, description, icon: Icon }) => (
             <article key={title} className="card p-6">
               <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-md bg-purple-brand text-yellow-brand">

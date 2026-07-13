@@ -1,11 +1,11 @@
 import { CheckCircle2, Compass, Hand } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
-export default function MontessoriSection() {
+export default function MontessoriSection({ id }) {
   const points = ["Hands-on discovery", "Independence and confidence", "Respectful classroom community"];
 
   return (
-    <section className="section-pad bg-purple-brand text-white">
+    <section id={id} className="section-pad scroll-mt-24 bg-purple-brand text-white">
       <div className="container-pad grid gap-10 lg:grid-cols-2 lg:items-center">
         <div>
           <SectionHeading

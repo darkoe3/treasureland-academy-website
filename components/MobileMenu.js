@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { X } from "lucide-react";
-import { navLinks, school } from "@/lib/schoolData";
+import { ChevronDown, X } from "lucide-react";
+import { useState } from "react";
+import { academicsMenuItems, navLinks, school } from "@/lib/schoolData";
 
 export default function MobileMenu({ open, onClose }) {
+  const [academicsOpen, setAcademicsOpen] = useState(false);
+
   if (!open) return null;
 
   return (
@@ -36,16 +39,55 @@ export default function MobileMenu({ open, onClose }) {
           </button>
         </div>
         <nav className="grid gap-1 p-4" aria-label="Mobile navigation">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={onClose}
-              className="rounded-md px-3 py-3 font-semibold text-slate-700 hover:bg-mist hover:text-purple-brand"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.label === "Academics") {
+              return (
+                <div key={link.href}>
+                  <button
+                    type="button"
+                    onClick={() => setAcademicsOpen((current) => !current)}
+                    className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left font-semibold text-slate-700 hover:bg-mist hover:text-purple-brand"
+                    aria-expanded={academicsOpen}
+                  >
+                    {link.label}
+                    <ChevronDown size={18} aria-hidden="true" className={academicsOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+                  </button>
+                  {academicsOpen ? (
+                    <div className="ml-3 mt-1 grid gap-1 border-l border-purple-brand/10 pl-3">
+                      <Link
+                        href={link.href}
+                        onClick={onClose}
+                        className="rounded-md px-3 py-2 text-sm font-semibold text-purple-brand hover:bg-mist"
+                      >
+                        Academics Overview
+                      </Link>
+                      {academicsMenuItems.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          onClick={onClose}
+                          className="rounded-md px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-mist hover:text-purple-brand"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={onClose}
+                className="rounded-md px-3 py-3 font-semibold text-slate-700 hover:bg-mist hover:text-purple-brand"
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
         <div className="mt-auto p-4">
           <a

@@ -6,10 +6,10 @@ import MontessoriSection from "@/components/MontessoriSection";
 
 export const metadata = {
   title: "Academics",
-  description: "Explore Treasureland Academy's Nursery, Kindergarten, Primary and Junior High programmes with Montessori education, STEM, ICT, creative arts and learner support.",
+  description: "Explore Treasureland Academy's Creche, Nursery, Kindergarten, Primary and Junior High School programmes with Montessori education, STEM, ICT, creative arts and learner support.",
   openGraph: {
     title: "Academics at Treasureland Academy",
-    description: "Montessori, STEM and ICT enriched education from Nursery through Junior High School."
+    description: "Montessori, STEM and ICT enriched education from Creche through Junior High School."
   }
 };
 
@@ -29,9 +29,9 @@ export default function AcademicsPage() {
         text="Our academic programme combines Montessori principles, STEM, ICT, creativity, character formation and careful learner support."
       />
       <AcademicLevels detailed />
-      <MontessoriSection />
-      <StemIctSection />
-      <section className="section-pad bg-white">
+      <MontessoriSection id="montessori" />
+      <StemIctSection id="stem-ict" />
+      <section id="whole-child-learning" className="section-pad scroll-mt-24 bg-white">
         <div className="container-pad">
           <SectionHeading eyebrow="Whole Child Learning" title="Beyond the core subjects" />
           <div className="grid gap-5 md:grid-cols-2">

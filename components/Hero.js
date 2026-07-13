@@ -30,8 +30,8 @@ export default function Hero() {
             Building Confident Learners for a Changing World
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/88 md:text-xl">
-            Treasureland Academy provides high-quality Montessori-based education enriched with STEM, ICT,
-            creativity, character development and sustainability.
+            Treasureland Academy provides high-quality Montessori-based education from Creche through Junior High
+            School, enriched with STEM, ICT, creativity, character development and sustainability.
           </p>
           <div className="mt-6 inline-flex rounded-md bg-yellow-brand px-4 py-2 text-sm font-black text-purple-brand">
             {school.motto}

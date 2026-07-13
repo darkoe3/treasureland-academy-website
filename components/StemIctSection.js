@@ -1,9 +1,9 @@
 import SectionHeading from "./SectionHeading";
 import { stemCards } from "@/lib/schoolData";
 
-export default function StemIctSection() {
+export default function StemIctSection({ id }) {
   return (
-    <section className="section-pad bg-white">
+    <section id={id} className="section-pad scroll-mt-24 bg-white">
       <div className="container-pad">
         <SectionHeading
           eyebrow="STEM and ICT"

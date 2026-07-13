@@ -1,11 +1,11 @@
 import AdmissionForm from "@/components/AdmissionForm";
 import PageIntro from "@/components/PageIntro";
 import SectionHeading from "@/components/SectionHeading";
-import { school } from "@/lib/schoolData";
+import { academicLevelLabel, school } from "@/lib/schoolData";
 
 export const metadata = {
   title: "Admissions",
-  description: "Start an admission enquiry for Treasureland Academy in Kasoa-Brigade for Nursery, Kindergarten, Primary or Junior High School.",
+  description: `Start an admission enquiry for Treasureland Academy in Kasoa-Brigade for ${academicLevelLabel}.`,
   openGraph: {
     title: "Admissions | Treasureland Academy",
     description: "Admission steps, requirements, school visits and enquiry form for Treasureland Academy."
@@ -45,7 +45,7 @@ export default function AdmissionsPage() {
             </ol>
             <div className="mt-6 card p-6">
               <h2 className="text-xl font-black text-purple-brand">Classes Available</h2>
-              <p className="mt-3 leading-8 text-slate-600">Nursery, Kindergarten, Primary and Junior High School.</p>
+              <p className="mt-3 leading-8 text-slate-600">{academicLevelLabel}.</p>
             </div>
             <div className="mt-6 card p-6">
               <h2 className="text-xl font-black text-purple-brand">Requirements Checklist</h2>

@@ -6,10 +6,10 @@ import SustainabilitySection from "@/components/SustainabilitySection";
 
 export const metadata = {
   title: "About",
-  description: "Learn about Treasureland Academy, its history, Montessori philosophy, vision, mission, core values and sustainability commitment.",
+  description: "Learn about Treasureland Academy, its Creche through Junior High School education, history, Montessori philosophy, vision, mission, core values and sustainability commitment.",
   openGraph: {
     title: "About Treasureland Academy",
-    description: "A forward-thinking Montessori, STEM and ICT school in Kasoa-Brigade, Ga South, Ghana."
+    description: "A forward-thinking Creche through Junior High School Montessori, STEM and ICT school in Kasoa-Brigade, Ga South, Ghana."
   }
 };
 
@@ -19,12 +19,12 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="About Us"
         title="A forward-thinking school for confident, compassionate learners"
-        text="Treasureland Academy is dedicated to high-quality, inclusive and sustainable education for Nursery, Kindergarten, Primary and Junior High learners."
+        text="Treasureland Academy is dedicated to high-quality, inclusive and sustainable education for Creche, Nursery, Kindergarten, Primary and Junior High School learners."
       />
       <section className="section-pad bg-white">
         <div className="container-pad grid gap-8 lg:grid-cols-3">
           {[
-            ["School Overview", "Treasureland Academy is a forward-thinking educational institution dedicated to providing high-quality, inclusive and sustainable education."],
+            ["School Overview", "Treasureland Academy provides quality education from Creche through Junior High School, offering a seamless learning journey from early childhood to adolescence. Through the Montessori philosophy, strong academic instruction, STEM, ICT, creativity, character formation and sustainability education, learners are prepared to become confident, responsible and globally competitive citizens."],
             ["History", "Founded in 2011, the academy combines the Montessori philosophy with modern approaches to teaching and learning."],
             ["Learning for Life", "We believe education must prepare learners not only for examinations, but also for life as independent thinkers, compassionate leaders, responsible citizens and lifelong learners."]
           ].map(([title, text]) => (
