@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, X } from "lucide-react";
 import { useState } from "react";
-import { academicsMenuItems, navLinks, school } from "@/lib/schoolData";
+import { academicsMenuItems, mobileNavLinks, school } from "@/lib/schoolData";
 
 export default function MobileMenu({ open, onClose }) {
   const [academicsOpen, setAcademicsOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function MobileMenu({ open, onClose }) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-purple-brand/35 backdrop-blur-sm lg:hidden">
+    <div id="mobile-navigation" className="fixed inset-0 z-50 bg-purple-brand/35 backdrop-blur-sm xl:hidden">
       <div className="ml-auto flex h-full w-[86%] max-w-sm flex-col bg-white shadow-soft">
         <div className="flex items-center justify-between border-b border-purple-brand/10 p-4">
           <div className="flex min-w-0 items-center gap-3">
@@ -34,12 +34,13 @@ export default function MobileMenu({ open, onClose }) {
             aria-label="Close navigation menu"
             onClick={onClose}
             className="rounded-full p-2 text-purple-brand hover:bg-purple-brand/10"
+            aria-controls="mobile-navigation"
           >
             <X />
           </button>
         </div>
         <nav className="grid gap-1 p-4" aria-label="Mobile navigation">
-          {navLinks.map((link) => {
+          {mobileNavLinks.map((link) => {
             if (link.label === "Academics") {
               return (
                 <div key={link.href}>
@@ -89,11 +90,15 @@ export default function MobileMenu({ open, onClose }) {
             );
           })}
         </nav>
-        <div className="mt-auto p-4">
-          <a
-            href={school.phoneHref}
+        <div className="mt-auto grid gap-3 p-4">
+          <Link
+            href="/admissions"
+            onClick={onClose}
             className="block rounded-md bg-purple-brand px-4 py-3 text-center font-bold text-white hover:bg-purple-brand/90"
           >
+            Apply Now
+          </Link>
+          <a href={school.phoneHref} className="text-center text-sm font-semibold text-purple-brand hover:text-gold-brand">
             Call {school.phone}
           </a>
         </div>

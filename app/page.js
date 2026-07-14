@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import Hero from "@/components/Hero";
+import AcademyVideoSection from "@/components/AcademyVideoSection";
 import AboutPreview from "@/components/AboutPreview";
 import AcademicLevels from "@/components/AcademicLevels";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -28,7 +29,8 @@ export default function Home() {
       addressRegion: "Ga South",
       addressCountry: "GH"
     },
-    telephone: school.phone,
+    telephone: school.phoneNumbers.map((phone) => phone.label),
+    email: school.email,
     url: "https://treasurelandacademy.com",
     educationalLevel: academicLevelNames
   };
@@ -37,6 +39,7 @@ export default function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero />
+      <AcademyVideoSection />
       <AboutPreview />
       <AcademicLevels />
       <WhyChooseUs />
