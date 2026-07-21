@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, ExternalLink, Menu } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import { academicsMenuItems, desktopNavLinks, school } from "@/lib/schoolData";
@@ -57,8 +57,8 @@ export default function Navbar() {
             <span className="hidden truncate text-xs font-semibold text-slate-500 2xl:block">{school.motto}</span>
           </span>
         </Link>
-        <div className="hidden min-w-0 items-center gap-5 xl:flex">
-          <nav className="flex items-center gap-5" aria-label="Main navigation">
+        <div className="hidden min-w-0 items-center gap-4 xl:flex">
+          <nav className="flex items-center gap-4" aria-label="Main navigation">
             {desktopNavLinks.map((link) => {
               if (link.label === "Academics") {
                 return (
@@ -115,6 +115,16 @@ export default function Navbar() {
               );
             })}
           </nav>
+          <a
+            href={school.schoolAppHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Launch the Treasureland School App in a new tab"
+            className="inline-flex items-center justify-center gap-1.5 rounded-md border border-gold-brand/45 px-3 py-2 text-sm font-black text-purple-brand hover:bg-yellow-brand hover:text-purple-brand"
+          >
+            <ExternalLink size={15} aria-hidden="true" />
+            <span>School App</span>
+          </a>
           <Link
             href="/admissions"
             className="rounded-md bg-purple-brand px-4 py-2 text-sm font-bold text-white hover:bg-purple-brand/90"

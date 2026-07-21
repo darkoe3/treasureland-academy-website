@@ -9,6 +9,7 @@ import MontessoriSection from "@/components/MontessoriSection";
 import StemIctSection from "@/components/StemIctSection";
 import VisionMission from "@/components/VisionMission";
 import CoreValues from "@/components/CoreValues";
+import SchoolResourcesSection from "@/components/SchoolResourcesSection";
 import SustainabilitySection from "@/components/SustainabilitySection";
 import FacilitiesSection from "@/components/FacilitiesSection";
 import GalleryPreview from "@/components/GalleryPreview";
@@ -47,6 +48,7 @@ export default function Home() {
       <StemIctSection />
       <VisionMission />
       <CoreValues />
+      <SchoolResourcesSection />
       <SustainabilitySection />
       <FacilitiesSection />
       <GalleryPreview />

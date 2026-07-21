@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, X } from "lucide-react";
+import { ChevronDown, ExternalLink, X } from "lucide-react";
 import { useState } from "react";
 import { academicsMenuItems, mobileNavLinks, school } from "@/lib/schoolData";
 
@@ -91,6 +91,17 @@ export default function MobileMenu({ open, onClose }) {
           })}
         </nav>
         <div className="mt-auto grid gap-3 p-4">
+          <a
+            href={school.schoolAppHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            aria-label="Launch the Treasureland School App in a new tab"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-gold-brand/45 px-4 py-3 text-center font-bold text-purple-brand hover:bg-yellow-brand"
+          >
+            <ExternalLink size={18} aria-hidden="true" />
+            Launch School App
+          </a>
           <Link
             href="/admissions"
             onClick={onClose}
