@@ -107,13 +107,6 @@ export default function MobileMenu({ open, onClose }) {
           })}
         </nav>
         <div className="mt-auto grid gap-3 border-t border-purple-brand/10 p-4">
-          <Link
-            href="/admissions"
-            onClick={onClose}
-            className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-purple-brand px-4 py-3 text-center text-base font-bold text-white hover:bg-purple-brand/90"
-          >
-            Apply Now
-          </Link>
           <a
             href={school.schoolAppHref}
             target="_blank"

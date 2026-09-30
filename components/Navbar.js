@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronDown, ExternalLink, Menu } from "lucide-react";
+import { ChevronDown, ExternalLink, Menu, UserRound } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import { academicsMenuItems, desktopNavLinks, school } from "@/lib/schoolData";
@@ -120,17 +120,21 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Launch the Treasureland School App in a new tab"
-            className="inline-flex items-center justify-center gap-1.5 rounded-md border border-gold-brand/45 px-3 py-2 text-sm font-black text-purple-brand hover:bg-yellow-brand hover:text-purple-brand"
+            className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-md bg-purple-brand px-3 py-2 text-sm font-semibold text-white hover:bg-purple-brand/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-brand"
           >
             <ExternalLink size={15} aria-hidden="true" />
             <span>School App</span>
           </a>
-          <Link
-            href="/admissions"
-            className="rounded-md bg-purple-brand px-4 py-2 text-sm font-bold text-white hover:bg-purple-brand/90"
+          <a
+            href={school.staffPortalHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the Treasureland Staff Portal in a new tab"
+            className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-md border border-gold-brand/45 bg-yellow-brand px-3 py-2 text-sm font-semibold text-purple-brand hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-brand"
           >
-            Apply Now
-          </Link>
+            <UserRound size={15} aria-hidden="true" />
+            <span>Staff Portal</span>
+          </a>
         </div>
         <button
           onClick={() => setOpen(true)}
