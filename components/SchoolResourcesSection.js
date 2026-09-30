@@ -1,4 +1,4 @@
-import { Download, ExternalLink, FileText, MonitorSmartphone, ShieldCheck } from "lucide-react";
+import { Download, ExternalLink, FileText, MonitorSmartphone, ShieldCheck, UserRound } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { school } from "@/lib/schoolData";
 
@@ -54,9 +54,9 @@ export default function SchoolResourcesSection() {
             <div className="flex h-16 w-16 items-center justify-center rounded-md border border-white/15 bg-white/10 text-yellow-brand">
               <MonitorSmartphone size={34} aria-hidden="true" />
             </div>
-            <h2 className="mt-5 text-2xl font-black md:text-3xl">Access the Treasureland School App</h2>
+            <h2 className="mt-5 text-2xl font-black md:text-3xl">Access Our Digital Platforms</h2>
             <p className="mt-4 leading-8 text-white/82">
-              Parents, staff and authorised users can securely access the Treasureland Academy school management platform for school-related services and information.
+              Quickly access Treasureland Academy&apos;s digital platforms for school services and staff operations.
             </p>
             <div className="mt-6 rounded-md border border-white/15 bg-white/10 p-4">
               <div className="flex items-center gap-3 text-sm font-bold text-white/82">
@@ -69,16 +69,32 @@ export default function SchoolResourcesSection() {
                 <span className="h-2 rounded-full bg-white/25" />
               </div>
             </div>
-            <a
-              href={school.schoolAppHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Launch the Treasureland School App in a new tab"
-              className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-yellow-brand px-5 py-3 text-center font-black text-purple-brand shadow-soft hover:-translate-y-0.5 hover:bg-white focus-visible:bg-white"
-            >
-              Launch School App
-              <ExternalLink size={18} aria-hidden="true" />
-            </a>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <a
+                href={school.schoolAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Launch the Treasureland School App in a new tab"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-purple-brand px-5 py-3 text-center font-semibold text-white shadow-soft ring-1 ring-white/15 hover:-translate-y-0.5 hover:bg-purple-brand/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-brand"
+              >
+                <ExternalLink size={18} aria-hidden="true" />
+                School App
+              </a>
+              <a
+                href={school.staffPortalHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open the Treasureland Staff Portal in a new tab"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-yellow-brand px-5 py-3 text-center font-semibold text-purple-brand shadow-soft hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-brand"
+              >
+                <UserRound size={18} aria-hidden="true" />
+                Staff Portal
+              </a>
+            </div>
+            <p className="mt-4 text-sm leading-6 text-white/70">
+              <span className="font-bold text-white/90">School App</span> — Access the school&apos;s management platform.{" "}
+              <span className="font-bold text-white/90">Staff Portal</span> — Secure access for authorised Treasureland Academy staff.
+            </p>
           </article>
         </div>
       </div>

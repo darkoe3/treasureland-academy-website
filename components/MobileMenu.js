@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ChevronDown, ExternalLink, X } from "lucide-react";
+import { ChevronDown, ExternalLink, UserRound, X } from "lucide-react";
 import { useState } from "react";
 import { academicsMenuItems, mobileNavLinks, school } from "@/lib/schoolData";
 
@@ -124,6 +124,17 @@ export default function MobileMenu({ open, onClose }) {
           >
             <ExternalLink size={18} className="text-purple-brand" aria-hidden="true" />
             Launch School App
+          </a>
+          <a
+            href={school.staffPortalHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            aria-label="Open the Treasureland Staff Portal in a new tab"
+            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-yellow-brand px-4 py-3 text-center text-base font-bold text-purple-brand hover:bg-white active:bg-white/90"
+          >
+            <UserRound size={18} className="text-purple-brand" aria-hidden="true" />
+            Staff Portal
           </a>
           <a href={school.phoneHref} className="text-center text-base font-semibold text-purple-brand hover:text-gold-brand">
             Call {school.phone}

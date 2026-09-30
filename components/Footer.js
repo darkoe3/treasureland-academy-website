@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Globe, Mail, MapPin, MessageCircle, Phone, Send, Share2 } from "lucide-react";
+import { ExternalLink, Globe, Mail, MapPin, MessageCircle, Phone, Send, Share2, UserRound } from "lucide-react";
 import { academicLevelLabel, academicLevelNames, footerExploreLinks, footerQuickLinks, school } from "@/lib/schoolData";
 
 export default function Footer() {
@@ -63,6 +63,15 @@ export default function Footer() {
               aria-label="Open School App in a new tab"
             >
               School App <ExternalLink size={14} aria-hidden="true" />
+            </a>
+            <a
+              href={school.staffPortalHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-white/78 hover:text-yellow-brand"
+              aria-label="Open Staff Portal in a new tab"
+            >
+              Staff Portal <UserRound size={14} aria-hidden="true" />
             </a>
             {footerExploreLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-white/78 hover:text-yellow-brand">
